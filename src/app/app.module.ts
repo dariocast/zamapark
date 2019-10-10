@@ -35,7 +35,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import {PwaService} from './pwa-service.service';
 
 @NgModule({
   imports: [
@@ -65,7 +64,7 @@ import {PwaService} from './pwa-service.service';
     UserProfileComponent,
   ],
   bootstrap: [ AppComponent ],
-  providers: [AuthService, AuthGuard, PwaService]
+  providers: [AuthService, AuthGuard]
 })
 export class AppModule { }
 

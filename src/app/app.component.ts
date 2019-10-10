@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {PwaService} from './pwa-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,4 @@ import {PwaService} from './pwa-service.service';
 })
 export class AppComponent {
   title = 'zamapark';
-
-  constructor(public Pwa: PwaService) {}
-  installPwa(): void {
-    this.Pwa.promptEvent.prompt();
-  }
 }
