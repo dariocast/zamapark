@@ -1,0 +1,19 @@
+<div class="col">
+  <h1>Menù</h1>
+  <div *ngFor="let product of products">
+    <div class="card mb-1" style="width: 18rem;" >
+      <img src={{product.photoURL}} class="card-img-top" alt={{product.name}}>
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text"><small class="text-muted">Costo: {{product.price}} crediti</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

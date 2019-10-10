@@ -1,0 +1,28 @@
+<div *ngIf="auth.user$ | async; then authenticated else guest" >
+        <!-- template will replace this div -->
+</div>
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <div class="col">
+    <h1>Ciao giovanissimo!</h1>
+    <h2>effettua il login per iniziare...</h2>
+    <button (click)="auth.googleSignin()" class="btn btn-lg btn-primary"><i class="fa fa-google" style="color:white;"></i> Accedi</button>
+  </div>
+</ng-template>
+
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div class="col">
+    <div class="card" style="width: 18rem;" *ngIf="auth.user$ | async as user">
+      <img src={{user.photoURL}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.displayName }}</h5>
+        <p class="card-text">Hai ancora {{ user.balance }} crediti</p>
+        <button class="btn btn-md btn-warning mr-2" [routerLink]="['/scan']">Scan <i class="fa fa-camera"></i></button>
+        <button class="btn btn-md btn-outline-danger" (click)="auth.signOut()">Logout</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

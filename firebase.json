@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "zamapark",
+      "public": "dist/zamapark",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

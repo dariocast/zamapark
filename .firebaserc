@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "zama-394af": {
+      "hosting": {
+        "zamapark": [
+          "zama-394af"
+        ]
+      }
+    }
+  }
+}
