@@ -19,10 +19,9 @@ export class ScanComponent implements OnInit {
   }
 
   scanSuccessHandler(event) {
-    this.lastQR = event;
-    alert(event);
-    alert(this.lastQR);
     this.scannerEnabled = false;
+    this.lastQR = event;
+    alert(this.lastQR);
   }
 
   startScan() {

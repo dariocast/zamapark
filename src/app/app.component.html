@@ -3,3 +3,14 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<script>
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    console.log(e);
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    deferredPrompt.prompt();
+  });
+</script>
