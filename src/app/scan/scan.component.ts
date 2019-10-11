@@ -9,6 +9,7 @@ import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 export class ScanComponent implements OnInit {
   @ViewChild('scanner', {static: false})
   scanner: ZXingScannerComponent;
+  scannerEnabled = true;
 
   constructor() { }
 
@@ -17,11 +18,11 @@ export class ScanComponent implements OnInit {
 
   scanSuccessHandler(event) {
     console.log(event);
-    this.scanner.scannerEnabled = false;
+    this.scannerEnabled = false;
   }
 
   startScan() {
-    this.scanner.restartScan();
+    this.scannerEnabled = true;
   }
 
 }
