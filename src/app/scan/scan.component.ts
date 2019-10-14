@@ -3,8 +3,8 @@ import {ZXingScannerComponent} from '@zxing/ngx-scanner';
 import {QR} from '../qr';
 import {AuthService} from '../auth.service';
 import {QRType} from '../qrtype.enum';
-import {async} from 'rxjs/internal/scheduler/async';
 import {User} from '../user';
+import {auth} from 'firebase';
 
 @Component({
   selector: 'app-scan',
@@ -18,12 +18,17 @@ export class ScanComponent implements OnInit {
   lastQR: QR;
   user: User;
 
-  constructor(public auth: AuthService) { }
+  constructor(public authService: AuthService) {
+    this.authService.user$.subscribe(
+      (user) => {
+        if (user) {
+          this.user = user;
+        }
+      }
+    );
+  }
 
   ngOnInit() {
-    this.auth.user$.toPromise().then(
-      (val) => this.user = val
-    );
   }
 
   scanSuccessHandler(event) {
@@ -33,14 +38,14 @@ export class ScanComponent implements OnInit {
   }
 
   private analizeQR() {
-    alert(this.lastQR.type);
-    if (this.lastQR.type === QRType.VALUE) {
+    if (this.lastQR.type.toString() === QRType[QRType.VALUE]) {
       const factor = parseInt(this.lastQR.payload.price, 10);
-      if (this.user) {
+      if (this.user !== undefined) {
         const temp = this.user.balance - factor;
+        console.log('balance: ' + this.user.balance + '\nfactor: ' + factor + '\ntemp: ' + temp);
         if (temp >= 0) {
           this.user.balance = this.user.balance - factor;
-          this.auth.updateUserData(this.user);
+          this.authService.updateUserData(this.user);
           alert('Hai acquistato ' + this.lastQR.payload.item + '\nNuovo credito: ' + this.user.balance);
         } else {
           alert('Credito insufficiente!');

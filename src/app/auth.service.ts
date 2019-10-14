@@ -13,6 +13,7 @@ import { switchMap } from 'rxjs/operators';
 export class AuthService {
 
     user$: Observable<User>;
+    currentUser: User = null;
 
     constructor(
         private afAuth: AngularFireAuth,
@@ -38,7 +39,7 @@ export class AuthService {
     return this.getUserData(credential.user);
   }
 
-  private getUserData(user) {
+  public getUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
     userRef.get().toPromise().then(function(doc) {
