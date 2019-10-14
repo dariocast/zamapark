@@ -3,6 +3,6 @@
   (scanSuccess)="scanSuccessHandler($event)"
 ></zxing-scanner>
 <button *ngIf="!scannerEnabled" class="btn btn-lg btn-primary" (click)="startScan()">Scannerizza!</button>
-<div *ngIf="auth.user$ | async as user">
+<div *ngIf="authService.user$ | async as user">
   {{user.displayName}}
 </div>
