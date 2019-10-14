@@ -4,7 +4,7 @@ export interface QR {
   type: QRType;
   createdBy: string;
   payload: {
-    mimetype: string;
-    body: string;
+    item: string; // oggetto acquistato
+    price: string; // prezzo pagato
   };
 }
