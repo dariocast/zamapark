@@ -55,7 +55,7 @@ export class AuthService {
           email: user.email,
           displayName: user.displayName,
           photoURL: user.photoURL,
-          balance: 50
+          balance: 0
         };
         const newUser = userRef.set(data, { merge: true });
         console.log('User created: ', data);
