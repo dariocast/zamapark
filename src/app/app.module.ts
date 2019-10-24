@@ -8,7 +8,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// material objects
+import {MaterialModule} from './material-module';
+
 
 // the scanner!
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
@@ -26,7 +30,6 @@ const config = {
 };
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { ScanComponent } from './scan/scan.component';
@@ -35,9 +38,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
+    // materials
+    MaterialModule,
     NgbModule,
     BrowserModule,
     ReactiveFormsModule,
@@ -53,11 +59,12 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) // storage
+    AngularFireStorageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule // storage
   ],
   declarations: [
     AppComponent,
-    TopBarComponent,
     ProductListComponent,
     WalletComponent,
     ScanComponent,

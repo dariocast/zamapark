@@ -1,8 +1,19 @@
-<app-top-bar></app-top-bar>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-button [routerLink]="['']">
+    <img alt="Home" height="40" src="../../assets/icons/logo2.png" title="Home"  class="ng-star-inserted">  </button>
+  <span>ZamaPark</span>
+  <span class="filling-span"></span>
+  <button mat-button [routerLink]="['/menu']" >
+    <mat-icon aria-hidden="false" aria-label="Menu">fastfood</mat-icon>
+  </button>
+</mat-toolbar>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened></mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
 
 <script>
   let deferredPrompt;
