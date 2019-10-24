@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000,
+      duration: 10000,
     });
   }
 
