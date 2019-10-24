@@ -5,6 +5,8 @@ import {AuthService} from '../auth.service';
 import {QRType} from '../qrtype.enum';
 import {User} from '../user';
 import {auth} from 'firebase';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-scan',
@@ -18,7 +20,7 @@ export class ScanComponent implements OnInit {
   lastQR: QR;
   user: User;
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private router: Router) {
     this.authService.user$.subscribe(
       (user) => {
         if (user) {
@@ -30,11 +32,11 @@ export class ScanComponent implements OnInit {
 
   ngOnInit() {
   }
-
   scanSuccessHandler(event) {
     this.scannerEnabled = false;
     this.lastQR = JSON.parse(event);
     this.analizeQR();
+    this.router.navigateByUrl('');
   }
 
   private analizeQR() {
