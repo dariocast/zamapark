@@ -1,8 +1,12 @@
-<zxing-scanner #scanner *ngIf="scannerEnabled"
-  [enable]="scannerEnabled"
-  (scanSuccess)="scanSuccessHandler($event)"
-></zxing-scanner>
-<button *ngIf="!scannerEnabled" class="btn btn-lg btn-primary" (click)="startScan()">Scannerizza!</button>
-<div *ngIf="authService.user$ | async as user">
-  {{user.displayName}}
+<div class="my_content_wrapper">
+  <div class="my_content">
+    <div  #scanner *ngIf="scannerEnabled">
+      <zxing-scanner
+        [enable]="scannerEnabled"
+        (scanSuccess)="scanSuccessHandler($event)"
+      ></zxing-scanner>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <button *ngIf="!scannerEnabled" class="btn btn-lg btn-primary" (click)="startScan()">Scannerizza!</button>
+  </div>
 </div>

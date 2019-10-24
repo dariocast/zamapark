@@ -1,28 +1,34 @@
 <div *ngIf="auth.user$ | async; then authenticated else guest" >
-        <!-- template will replace this div -->
+  <!-- template will replace this div -->
 </div>
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <div class="col">
-    <h1>Ciao giovanissimo!</h1>
-    <h2>effettua il login per iniziare...</h2>
-    <button (click)="auth.googleSignin()" class="btn btn-lg btn-primary"><i class="fa fa-google" style="color:white;"></i> Accedi</button>
+  <div class="my_content_wrapper">
+    <div class="my_content">
+      <h1 class="mat-display-3">Ciao giovanissimo!</h1>
+      <h1 class="mat-h1">Benvenuto allo Zama Starter Park!</h1>
+      <h2 class="mat-h2">effettua il login per iniziare...</h2>
+      <button mat-raised-button color="primary" (click)="auth.googleSignin()" ><i class="fa fa-google" style="color:white; margin-right: 10px;"></i> Accedi</button>
+    </div>
   </div>
 </ng-template>
 
 
 <!-- User logged in -->
 <ng-template #authenticated>
-  <div class="col">
-    <div class="card" style="width: 18rem;" *ngIf="auth.user$ | async as user">
-      <img src={{user.photoURL}} class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ user.displayName }}</h5>
-        <p class="card-text">Hai ancora {{ user.balance }} crediti</p>
-        <button class="btn btn-md btn-warning mr-2" [routerLink]="['/scan']">Scan <i class="fa fa-camera"></i></button>
-        <button class="btn btn-md btn-outline-danger" (click)="auth.signOut()">Logout</button>
-      </div>
+  <div class="my_content_wrapper">
+    <div class="my_content">
+      <mat-card class="card" style="width: 18rem;" *ngIf="auth.user$ | async as user">
+        <img src={{user.photoURL}} mat-card-image alt="...">
+          <mat-card-title>{{ user.displayName }}</mat-card-title>
+          <mat-card-subtitle class="card-text">Hai {{ user.balance }} crediti</mat-card-subtitle>
+          <mat-card-actions>
+            <button mat-stroked-button color="primary" [routerLink]="['/scan']">Scan <i class="fa fa-camera"></i></button>
+            <button mat-stroked-button color="warn" (click)="auth.signOut()">Logout</button>
+          </mat-card-actions>
+      </mat-card>
     </div>
   </div>
+
 </ng-template>

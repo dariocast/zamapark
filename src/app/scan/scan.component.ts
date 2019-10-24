@@ -48,14 +48,14 @@ export class ScanComponent implements OnInit {
         if (temp >= 0) {
           this.user.balance = this.user.balance - factor;
           this.authService.updateUserData(this.user);
-          alert('Hai acquistato ' + this.lastQR.payload.item + '\nNuovo credito: ' + this.user.balance);
+          localStorage.setItem('msg', 'Hai acquistato ' + this.lastQR.payload.item + '\nNuovo credito: ' + this.user.balance);
         } else {
-          alert('Credito insufficiente!');
+          localStorage.setItem('msg', 'Credito insufficiente!');
         }
       }
     } else {
       console.error('QR scannerizzato: ' + this.lastQR);
-      alert('Il codice QR non è valido!');
+      localStorage.setItem('msg', 'Il codice QR non è valido!');
     }
   }
 
