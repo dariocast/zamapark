@@ -7,13 +7,7 @@
     <mat-icon aria-hidden="false" aria-label="Menu">fastfood</mat-icon>
   </button>
 </mat-toolbar>
-
-<mat-drawer-container>
-  <mat-drawer mode="side" opened></mat-drawer>
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+<router-outlet></router-outlet>
 
 <script>
   let deferredPrompt;
