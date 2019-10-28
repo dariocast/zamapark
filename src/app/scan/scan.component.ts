@@ -31,9 +31,7 @@ export class ScanComponent implements OnInit {
   }
 
   ngOnInit() {
-    if ( this.scanner.askForPermission() ) {
-      this.scannerEnabled = true;
-    }
+    this.scanner.askForPermission().then(r => this.scannerEnabled = r);
   }
   scanSuccessHandler(event) {
     this.scannerEnabled = false;
