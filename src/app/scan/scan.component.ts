@@ -21,6 +21,9 @@ export class ScanComponent implements OnInit {
   user: User;
 
   constructor(public authService: AuthService, private router: Router) {
+    this.scanner = new ZXingScannerComponent();
+
+
     this.authService.user$.subscribe(
       (user) => {
         if (user) {
@@ -32,6 +35,7 @@ export class ScanComponent implements OnInit {
 
   ngOnInit() {
     this.scanner.askForPermission().then(r => this.scannerEnabled = r);
+    console.log('on init called');
   }
   scanSuccessHandler(event) {
     this.scannerEnabled = false;
