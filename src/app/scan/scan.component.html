@@ -1,7 +1,7 @@
 <div class="my_content_wrapper">
   <div class="my_content">
-    <div  #scanner *ngIf="scannerEnabled">
-      <zxing-scanner
+    <div *ngIf="scannerEnabled">
+      <zxing-scanner #scanner
         [enable]="scannerEnabled"
         (scanSuccess)="scanSuccessHandler($event)"
       ></zxing-scanner>
