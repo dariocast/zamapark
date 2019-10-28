@@ -7,6 +7,6 @@
       ></zxing-scanner>
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
-    <button *ngIf="!scannerEnabled" class="btn btn-lg btn-primary" (click)="startScan()">Scannerizza!</button>
+    <button mat-raised-button *ngIf="!scannerEnabled" color="primary" (click)="startScan()">Scannerizza!</button>
   </div>
 </div>
