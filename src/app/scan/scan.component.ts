@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 export class ScanComponent implements OnInit {
   @ViewChild('scanner', {static: false})
   scanner: ZXingScannerComponent;
-  scannerEnabled = true;
+  scannerEnabled = false;
   lastQR: QR;
   user: User;
 
@@ -31,6 +31,9 @@ export class ScanComponent implements OnInit {
   }
 
   ngOnInit() {
+    if ( this.scanner.askForPermission() ) {
+      this.scannerEnabled = true;
+    }
   }
   scanSuccessHandler(event) {
     this.scannerEnabled = false;

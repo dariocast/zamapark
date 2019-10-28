@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1572105373996,
+  "timestamp": 1572263333825,
   "index": "/zamapark/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/zamapark/favicon.ico",
         "/zamapark/index.html",
-        "/zamapark/main-es2015.66dc347b44b957ef1b09.js",
-        "/zamapark/main-es5.66dc347b44b957ef1b09.js",
+        "/zamapark/main-es2015.9b66851cf9695473065d.js",
+        "/zamapark/main-es5.9b66851cf9695473065d.js",
         "/zamapark/manifest.webmanifest",
         "/zamapark/polyfills-es2015.d3e61f0dd2b58e518eca.js",
         "/zamapark/polyfills-es5.517f1d5415025b3e9b1a.js",
         "/zamapark/runtime-es2015.b948044840398824f16e.js",
         "/zamapark/runtime-es5.b948044840398824f16e.js",
-        "/zamapark/styles.2f080585d42ff75f770f.css"
+        "/zamapark/styles.cdf4bc7cf4f65129467e.css"
       ],
       "patterns": []
     },
@@ -103,15 +103,15 @@
     "/zamapark/assets/icons/manifest-icon-192.png": "a3d02003723abb83fabd7b887b0a187be1ee05c8",
     "/zamapark/assets/icons/manifest-icon-512.png": "155b4c8f62f95e83759a703b383bb490cb86e8cb",
     "/zamapark/favicon.ico": "c265e9ee25c9c86b364a0c27687a603487e54e70",
-    "/zamapark/index.html": "2e809dd69ea6c9aba65caae665d305e3c0cf80dc",
-    "/zamapark/main-es2015.66dc347b44b957ef1b09.js": "a59f8e430587ebdbdf91d2af26a77e290f012075",
-    "/zamapark/main-es5.66dc347b44b957ef1b09.js": "bd5f0d7ef1c1569bc4faa28957e98da22c7c8427",
-    "/zamapark/manifest.webmanifest": "42266c9584ea9cf531caad0697752aa89c86e70a",
+    "/zamapark/index.html": "1544b01646c28e75ab95ba0215d176ba0955d0ca",
+    "/zamapark/main-es2015.9b66851cf9695473065d.js": "91f2582bb52cff269ed6944bcde121ff1c57bc57",
+    "/zamapark/main-es5.9b66851cf9695473065d.js": "ff73f58773ec13b335f6eeaa34f6a52253b7633b",
+    "/zamapark/manifest.webmanifest": "382541b0583507b501ed2a06510b795b3463ee77",
     "/zamapark/polyfills-es2015.d3e61f0dd2b58e518eca.js": "e2f28c3743afd2899e140ad831df9675c233c02b",
     "/zamapark/polyfills-es5.517f1d5415025b3e9b1a.js": "bc55c457c97924a880c8c5bee5337b8d12a7d7d8",
     "/zamapark/runtime-es2015.b948044840398824f16e.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/zamapark/runtime-es5.b948044840398824f16e.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/zamapark/styles.2f080585d42ff75f770f.css": "ffe105382eb4f05610bbc186ac20c5d76024a260"
+    "/zamapark/styles.cdf4bc7cf4f65129467e.css": "ffe105382eb4f05610bbc186ac20c5d76024a260"
   },
   "navigationUrls": [
     {
